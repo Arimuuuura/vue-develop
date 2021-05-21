@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="title">
+            <h1>Typing Game</h1>
+            <div class="marker"></div>
+        </div>
+        <button v-if="startFlag!=true" class="startButton mb-20" @click="gameStart">START</button>
+        <div v-if="startFlag">
+            <div v-if="current_question_counts != 5" class="question mb-20">{{ current_question }}</div>
+            <div v-if="current_question_counts == 5" class="clear">CLEAR!</div>
+            <div v-if="current_question_counts != 5" class="typeFormWrapper mb-20">
+                <input v-model="typeBox" type="text" id="typeForm" class="typeForm">
+            </div>
+            <div class="gaugeWrapper mb-20">
+                <div v-bind:style="styleObject" class="gauge"></div>
+            </div>
+            <div class="answer">{{ current_question_counts }}/5</div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                startFlag: '',
+                current_question: '',
+                questions: ['good', 'morning', 'hello', 'tokyo', 'tell', 'hands', 'soccer', 'winter', 'island', 'heaven'],
+                typeBox: '',
+                current_question_counts: 0,
+                question_counts: 0,
+            },
+            computed: {
+                styleObject:function(){
+                    width = 1 / 5 * this.current_question_counts * 100 + "%"
+                    if(this.current_question_counts == 5){
+                        color = "#03a9f4"
+                    }else{
+                        color = "orange"
+                    }
+                    return {
+                        'width': width,
+                        'background-color': color
+                    }
+                }
+            },
+            methods: {
+                gameStart:function(){
+                    this.startFlag = true;
+                    this.$nextTick(function(){
+                        document.getElementById('typeForm').focus()
+                    })
+                }
+            },
+            mounted:function(){
+                this.current_question = this.questions[0]
+            },
+            watch: {
+                typeBox:function(e){
+                    if(e == this.current_question){
+                        this.questions.splice(0,1)
+                        this.current_question = this.questions[Math.floor(Math.random() * this.questions.length)]
+                        this.typeBox = '',
+                        this.current_question_counts += 1
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
