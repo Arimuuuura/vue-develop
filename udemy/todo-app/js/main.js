@@ -6,7 +6,8 @@ const app = Vue.createApp({
 	methods: {
 		addItem: function(event) {
 			let todo = {
-				item: this.newItem
+				item: this.newItem,
+				isDone: false
 			}
 			if (this.newItem === '') return
 			this.todos.push(todo)
