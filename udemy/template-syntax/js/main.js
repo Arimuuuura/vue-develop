@@ -7,7 +7,8 @@ const app = Vue.createApp({
 		message5: 'Hello arimura5',
 		message6: 'Hello arimura6',
 		number: 100,
-		ok: true
+		ok: true,
+		url: 'https://google.co.jp'
 	}),
 	methods: {
 		clickHandler: function(event) {

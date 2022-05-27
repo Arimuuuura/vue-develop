@@ -38,6 +38,11 @@
         <p>{{ message6.split('').reverse().join('') }}</p>
         <p>{{ ok ? 'Yes' : 'No' }}</p>
       </div>
+      <div>
+        <h3>v-bind の省略記法</h3>
+        <a v-bind:href="url">Link1</a><br />
+        <a :href="url">Link2</a><br />
+      </div>
     </div>
     <script src="https://unpkg.com/vue@3.1.5"></script>
     <script src="./js/main.js"></script>
