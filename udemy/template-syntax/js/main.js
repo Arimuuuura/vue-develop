@@ -1,6 +1,7 @@
 const app = Vue.createApp({
 	data: () => ({
-		message: 'Hello arimura'
+		message1: 'Hello arimura',
+		message2: 'Hello arimura2'
 	}),
 	methods: {
 		clickHandler: function(event) {
