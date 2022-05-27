@@ -12,6 +12,9 @@ const app = Vue.createApp({
 			if (this.newItem === '') return
 			this.todos.push(todo)
 			this.newItem = ''
+		},
+		deleteItem: function(index) {
+			this.todos.splice(index, 1);
 		}
 	}
 });
