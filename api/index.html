@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>API</title>
+</head>
+<body>
+    <div id="app">
+        <main>
+            <div class="search-box">
+                <input type="text" class="search-bar" placeholder="Search..." v-model="query">
+            </div>
+            <button v-on:click="test">検索</button>
+            <div class="container mx-auto" v-if="books.length">
+                <!-- <div class="" v-for="(value, key) in books">
+                    <div class="book d-flex my-4" v-for="val in value" @click="getKey" :data-order-id="key">
+                        <div class="book-img">
+                            <img v-bind:src="val.largeImageUrl" alt="">
+                        </div>
+                        <div class="px-3">
+                            <h5 class="box-read">{{ val.title }}</h5>
+                            <p>{{ key }}</p>
+                            <p class="detail" @click="getKey" :data-order-id="key">詳細を見る</p>
+                            <p></p>
+                        </div>
+                        <li>著者：{{ val.author }}</li>
+                        <li>税込価格：{{ val.itemPrice }}</li>
+                        <li>発売日：{{ val.salesDate }}</li>
+                        <li>出版社名：{{ val.publisherName }}</li>
+                        <li>書籍のサイズ：{{ val.size }}</li>
+                        <li>ISBNコード：{{ val.isbn }}</li>
+                        <li>商品説明文：{{ val.itemCaption }}</li>
+                        <li>商品URL：{{ val.itemUrl }}</li>
+                        <li>レビュー平均：{{ val.reviewAverage }}</li>
+                        <li>レビュー件数：{{ val.reviewCount }}</li>
+                    </div>
+                </div> -->
+                <div v-for="(book, key) in books">
+                    <!-- {{ book }} -->
+                    <div v-for="val in book" data="{{key}}" @click="getKey">
+                        <img v-bind:src="val.largeImageUrl" alt="">
+                        {{ key }}
+                        {{ val.title }}
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                api_key: "8f241f6e111e93a94a517a3c6477329e",
+                url: 'https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404?format=json&applicationId=1051466363713368918',
+                query: '',
+                books: [],
+                book: [],
+            },
+            methods: {
+                test: function(e) {
+                    fetch(`${this.url}&title=${this.query}`).then(res => {
+                        return res.json();
+                    }).then(this.setResult);
+                },
+                setResult: function(result) {
+                    this.books = result.Items;
+                    console.log(this.books)
+                    // this.books.forEach((val) =>
+                    //     this.book = val['Item'],
+                    //     console.log(val['Item'])
+                    // );
+                },
+                detail:function(){
+                    // this.startFlag = true;
+                    // console.log(this.key)
+                },
+                getKey: function(e) {
+                //     console.log(this.books.length)
+                //     this.books.forEach((val) =>
+                //         // console.log(val),
+                //         this.book.push(val),
+                //     );
+                //     console.log(this.book)
+                //     for (let i=0; i<this.books.length; i++) {
+                //         console.log(i)
+                //     }
+                    let id = e.currentTarget.getAttribute('data')
+                    console.log(id)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Detail</title>
+</head>
+<body>
+    <div id="app">
+        <a href="index.html">戻る</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                api_key: "8f241f6e111e93a94a517a3c6477329e",
+                url: 'https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404?format=json&applicationId=1051466363713368918',
+                query: '',
+                books: [],
+                // books: {},
+            },
+            methods: {
+                test: function(e) {
+                    console.log(this.url)
+                    fetch(`${this.url}&title=${this.query}`).then(res => {
+                        return res.json();
+                    }).then(this.setResult);
+                },
+                setResult: function(result) {
+                    // console.log(result)
+                    this.books = result.Items;
+                    console.log(this.books)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
