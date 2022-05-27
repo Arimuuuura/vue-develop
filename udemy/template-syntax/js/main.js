@@ -2,7 +2,8 @@ const app = Vue.createApp({
 	data: () => ({
 		message1: 'Hello arimura',
 		message2: 'Hello arimura2',
-		message3: 'Hello <span style="color: red">arimura3</span>'
+		message3: 'Hello <span style="color: red">arimura3</span>',
+		message4: 'Hello arimura4'
 	}),
 	methods: {
 		clickHandler: function(event) {
