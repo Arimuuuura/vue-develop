@@ -4,7 +4,10 @@ const app = Vue.createApp({
 		message2: 'Hello arimura2',
 		message3: 'Hello <span style="color: red">arimura3</span>',
 		message4: 'Hello arimura4',
-		message5: 'Hello arimura5'
+		message5: 'Hello arimura5',
+		message6: 'Hello arimura6',
+		number: 100,
+		ok: true
 	}),
 	methods: {
 		clickHandler: function(event) {
