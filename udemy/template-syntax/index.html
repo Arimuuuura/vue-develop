@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>template syntax</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <h3>v-once ディレクティブで初回のみレンダリング</h3>
+        <p v-once>{{ message1 }}</p>
+        <button v-on:click="clickHandler">Click!</button>
+      </div>
+      <div>
+        <h3>v-pre ディレクティブで要素と全ての子要素のコンパイルをスキップ</h3>
+        <p v-pre>{{ message2 }}</p>
+      </div>
+      <div>
+        <h3>v-html ディレクティブでプレーンなHTMLを挿入したい</h3>
+        <p>{{ message3 }}</p>
+        <p v-html="message3"></p>
+      </div>
+      <div>
+        <h3>v-cloak ディレクティブでHTMLのちらつき防止</h3>
+        <p v-cloak>{{ message4 }}</p>
+      </div>
+      <div>
+        <h3>v-text ディレクティブでマスタッシュを使わない</h3>
+        <p v-text="message5"></p>
+      </div>
+      <div>
+        <h3>JavaScript の様々な型</h3>
+        <p>{{ message6 }}</p>
+        <p>{{ number + 1 }}</p>
+        <p>{{ message6.split('').reverse().join('') }}</p>
+        <p>{{ ok ? 'Yes' : 'No' }}</p>
+      </div>
+      <div>
+        <h3>v-bind の省略記法</h3>
+        <a v-bind:href="url">Link1</a><br />
+        <a :href="url">Link2</a><br />
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@3.1.5"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
