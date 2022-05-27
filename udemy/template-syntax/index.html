@@ -18,6 +18,11 @@
         <h3>v-pre ディレクティブで要素と全ての子要素のコンパイルをスキップ</h3>
         <p v-pre>{{ message2 }}</p>
       </div>
+      <div>
+        <h3>v-html ディレクティブでプレーンなHTMLを挿入したい</h3>
+        <p>{{ message3 }}</p>
+        <p v-html="message3"></p>
+      </div>
     </div>
     <script src="https://unpkg.com/vue@3.1.5"></script>
     <script src="./js/main.js"></script>
