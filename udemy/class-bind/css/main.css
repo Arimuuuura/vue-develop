@@ -5,3 +5,11 @@
 .text-danger {
 	color: red;
 }
+
+.text-blue {
+	color: blue;
+}
+
+.bg-gray {
+	background-color: gray;
+}
