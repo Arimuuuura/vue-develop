@@ -14,6 +14,14 @@ const app = Vue.createApp({
 			set: function(value) {
 				this.basePrice = value / 1.1;
 			}
+		},
+		computedNum: function() {
+			return Math.random();
+		}
+	},
+	methods: {
+		methodsNum: function() {
+			return Math.random();
 		}
 	}
 }).mount('#app');
