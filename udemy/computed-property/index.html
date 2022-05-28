@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>computed property</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <h1>基本構文</h1>
+        <p>{{ message }}</p>
+        <p>{{ reversedMessage }}</p>
+      </div>
+      <div>
+        <h1>getter setter</h1>
+        <p>base price: <input type="text" v-model="basePrice" /></p>
+        <p>
+          tax included price: <input type="text" v-model="taxIncludedPrice" />
+        </p>
+      </div>
+      <div>
+        <h1>キャッシュの動作確認</h1>
+        <h3>computedNum</h3>
+        <p>computed は、キャッシュが効く</p>
+        <ol>
+          <li>{{ computedNum }}</li>
+          <li>{{ computedNum }}</li>
+          <li>{{ computedNum }}</li>
+        </ol>
+        <h3>methodsNum</h3>
+        <ol>
+          <li>{{ methodsNum() }}</li>
+          <li>{{ methodsNum() }}</li>
+          <li>{{ methodsNum() }}</li>
+        </ol>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@3.1.5"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
