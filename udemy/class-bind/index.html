@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>class bind</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <p>Hello <span v-bind:class="{ large: isLarge }">arimura</span></p>
+      <!-- 短縮記法 -->
+      <p>Hello <span :class="{ large: isLarge }">arimura</span></p>
+    </div>
+    <script src="https://unpkg.com/vue@3.1.5"></script>
+    <script src="https://unpkg.com/axios@0.21.1/dist/axios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
