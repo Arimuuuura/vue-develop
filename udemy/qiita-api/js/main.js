@@ -6,7 +6,6 @@ const app = Vue.createApp({
 	}),
 	watch: {
 		keyword: function(newKeyword, oldKeyword) {
-			console.log(newKeyword, oldKeyword);
 			this.message = 'Waiting for your typing..'
 			this.debouncedGetAnswer()
 		}
@@ -19,7 +18,6 @@ const app = Vue.createApp({
 	methods: {
 		getAnswer: function() {
 			if(this.keyword === '') {
-				console.log('空文字');
 				this.items = null;
 				return
 			}
