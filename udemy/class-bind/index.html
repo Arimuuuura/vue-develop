@@ -9,19 +9,33 @@
   </head>
   <body>
     <div id="app">
-      <p>
-        Hello
-        <span
-          class="text-blue bg-gray"
-          v-bind:class="{ large: isLarge, 'text-danger': hasError }"
-          >arimura</span
-        >
-      </p>
-      <!-- 短縮記法 -->
-      <p>
-        Hello
-        <span :class="{ large: isLarge }">arimura</span>
-      </p>
+      <div>
+        <h1>基本構文</h1>
+        <p>
+          Hello
+          <span
+            class="text-blue bg-gray"
+            v-bind:class="{ large: isLarge, 'text-danger': hasError }"
+            >arimura</span
+          >
+        </p>
+        <!-- 短縮記法 -->
+        <p>
+          Hello
+          <span :class="{ large: isLarge }">arimura</span>
+        </p>
+      </div>
+      <div>
+        <h1>配列構文</h1>
+        <p>
+          Hello
+          <span v-bind:class="largeClass">arimura</span>
+        </p>
+        <p>
+          Hello
+          <span v-bind:class="[largeClass, dangerClass]">arimura</span>
+        </p>
+      </div>
     </div>
     <script src="https://unpkg.com/vue@3.1.5"></script>
     <script src="./js/main.js"></script>
