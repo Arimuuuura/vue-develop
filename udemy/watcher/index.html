@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>watcher</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <h1>watch 基本</h1>
+        <p>{{ message }}</p>
+        <p><input type="text" v-model="message" /></p>
+      </div>
+      <div>
+        <h1>単位変換アプリ</h1>
+        <p><input type="text" v-model="km" />km</p>
+        <p><input type="text" v-model="m" />m</p>
+      </div>
+      <div>
+        <h1>算出プロパティと監視プロパティの比較</h1>
+        <p><input type="text" v-model="firstName" /></p>
+        <p><input type="text" v-model="lastName" /></p>
+        <p>watchFullName: {{ watchedFullName }}</p>
+        <p>computedFullName: {{ computedFullName }}</p>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@3.1.5"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
