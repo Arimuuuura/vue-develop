@@ -50,6 +50,19 @@
           <span v-bind:class="isLarge ? largeObject : '' ">arimura</span>
         </p>
       </div>
+      <div>
+        <h1>インラインスタイル</h1>
+        <p>
+          Hello
+          <span v-bind:style="{ color: color, fontSize: `${fontSize}px` }"
+            >arimura</span
+          >
+        </p>
+        <p>
+          Hello
+          <span v-bind:style="styleObject">arimura</span>
+        </p>
+      </div>
     </div>
     <script src="https://unpkg.com/vue@3.1.5"></script>
     <script src="./js/main.js"></script>

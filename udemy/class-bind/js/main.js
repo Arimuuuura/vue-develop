@@ -14,6 +14,12 @@ const app = Vue.createApp({
 		},
 		dangerObject: {
 			'text-danger': true
+		},
+		color: 'blue',
+		fontSize: 36,
+		styleObject: {
+			color: 'blue',
+			fontSize: '48px'
 		}
 	})
 }).mount('#app')
