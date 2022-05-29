@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form input</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <h1>v-model の基本おさらい</h1>
+        <p>{{ message }}</p>
+        <input type="text" v-model="message" />
+        <pre>{{ $data }}</pre>
+      </div>
+      <div>
+        <h1>v-model 利用時は value は無視される</h1>
+        <input type="text" v-model="message" value="test" />
+        <p>{{ message }}</p>
+      </div>
+      <div>
+        <h1>text-area は v-model を使用する</h1>
+        <label for="">マスタッシュ</label>
+        <textarea>{{ message }}</textarea>
+        <label for="">v-model</label>
+        <textarea v-model="message"></textarea>
+      </div>
+      <div>
+        <h1>単体チェックボックス</h1>
+        <label for="checkbox">{{ checked }}</label>
+        <input type="checkbox" name="" id="checkbox" v-model="checked" />
+      </div>
+      <div>
+        <h1>複数チェックボックス</h1>
+        <label for="red">Red</label>
+        <input type="checkbox" name="" id="red" value="red" v-model="colors" />
+        <label for="green">Green</label>
+        <input
+          type="checkbox"
+          name=""
+          id="green"
+          value="green"
+          v-model="colors"
+        />
+        <label for="blue">Blue</label>
+        <input
+          type="checkbox"
+          name=""
+          id="blue"
+          value="blue"
+          v-model="colors"
+        />
+        <p>{{ colors }}</p>
+      </div>
+      <div>
+        <h1>ラジオボタン</h1>
+        <input type="radio" name="" id="red" value="red" v-model="color" />
+        <label for="red">Red</label>
+        <input type="radio" name="" id="green" value="green" v-model="color" />
+        <label for="green">Green</label>
+        <input type="radio" name="" id="blue" value="blue" v-model="color" />
+        <label for="blue">Blue</label>
+        <p>{{ color }}</p>
+      </div>
+      <div>
+        <h1>セレクトボックス単体</h1>
+        <select name="" id="" v-model="selected">
+          <option value="" disabled>Please select one</option>
+          <option>Red</option>
+          <option>Green</option>
+          <option>Blue</option>
+        </select>
+        <p>{{ selected }}</p>
+      </div>
+      <div>
+        <h1>セレクトボックス複数</h1>
+        <select name="" id="" v-model="arraySelected" multiple>
+          <option>Red</option>
+          <option>Green</option>
+          <option>Blue</option>
+        </select>
+        <p>{{ arraySelected }}</p>
+      </div>
+      <div>
+        <h1>.lazy</h1>
+        <input type="text" v-model.lazy="messageLazy" />
+        <p>{{ messageLazy }}</p>
+      </div>
+      <div>
+        <h1>.trim</h1>
+        <label for="">trim なし</label>
+        <input type="text" v-model="message" />
+        <p>{{ message }}</p>
+        <label for="">trim あり</label>
+        <input type="text" v-model.trim="messageTrim" />
+        <p>{{ messageTrim }}</p>
+      </div>
+      <div>
+        <h1>.number</h1>
+        <input type="number" name="" id="" v-model.number="messageNumber" />
+        {{ messageNumber + 10 }}
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@3.1.5"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
