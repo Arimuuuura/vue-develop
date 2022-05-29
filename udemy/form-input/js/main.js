@@ -1,5 +1,7 @@
 const app = Vue.createApp({
 	data: () => ({
-		message: 'Hello arimura'
+		message: 'Hello arimura',
+		checked: false,
+		colors: []
 	})
 }).mount('#app');
