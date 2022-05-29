@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event handling</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ counter }}</p>
+      <button v-on:click="clickHandler($event, 'Arimura')">Click!</button>
+      <div>
+        <!-- v-on を @ で省略できる -->
+        <button @click.once="clickTime">Show Time</button>
+        <p>{{ message }}</p>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@3.1.5"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
