@@ -54,6 +54,16 @@
         />
         <p>{{ colors }}</p>
       </div>
+      <div>
+        <h1>ラジオボタン</h1>
+        <input type="radio" name="" id="red" value="red" v-model="color" />
+        <label for="red">Red</label>
+        <input type="radio" name="" id="green" value="green" v-model="color" />
+        <label for="green">Green</label>
+        <input type="radio" name="" id="blue" value="blue" v-model="color" />
+        <label for="blue">Blue</label>
+        <p>{{ color }}</p>
+      </div>
     </div>
     <script src="https://unpkg.com/vue@3.1.5"></script>
     <script src="./js/main.js"></script>
