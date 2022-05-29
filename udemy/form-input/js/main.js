@@ -3,6 +3,8 @@ const app = Vue.createApp({
 		message: 'Hello arimura',
 		checked: false,
 		colors: [],
-		color: ''
+		color: '',
+		selected: '',
+		arraySelected: ''
 	})
 }).mount('#app');
