@@ -7,6 +7,13 @@ const app = Vue.createApp({
 		classObject: {
 			large: true,
 			'text-danger': true
+		},
+		largeObject: {
+			large: true,
+			'bg-gray': true
+		},
+		dangerObject: {
+			'text-danger': true
 		}
 	})
 }).mount('#app')
