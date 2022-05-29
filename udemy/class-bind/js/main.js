@@ -3,6 +3,10 @@ const app = Vue.createApp({
 		isLarge: true,
 		hasError: true,
 		largeClass: 'large',
-		dangerClass: 'text-danger'
+		dangerClass: 'text-danger',
+		classObject: {
+			large: true,
+			'text-danger': true
+		}
 	})
 }).mount('#app')
