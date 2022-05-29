@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>class bind</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <h1>基本構文</h1>
+        <p>
+          Hello
+          <span
+            class="text-blue bg-gray"
+            v-bind:class="{ large: isLarge, 'text-danger': hasError }"
+            >arimura</span
+          >
+        </p>
+        <!-- 短縮記法 -->
+        <p>
+          Hello
+          <span :class="{ large: isLarge }">arimura</span>
+        </p>
+      </div>
+      <div>
+        <h1>配列構文</h1>
+        <p>
+          Hello
+          <span v-bind:class="largeClass">arimura</span>
+        </p>
+        <p>
+          Hello
+          <span v-bind:class="[largeClass, dangerClass]">arimura</span>
+        </p>
+      </div>
+      <div>
+        <h1>オブジェクト構文</h1>
+        <p>
+          Hello
+          <span v-bind:class="classObject">arimura</span>
+        </p>
+      </div>
+      <div>
+        <h1>三項演算子</h1>
+        <p>
+          Hello
+          <span v-bind:class="isLarge ? largeObject : '' ">arimura</span>
+        </p>
+      </div>
+      <div>
+        <h1>インラインスタイル</h1>
+        <p>
+          Hello
+          <span v-bind:style="{ color: color, fontSize: `${fontSize}px` }"
+            >arimura</span
+          >
+        </p>
+        <p>
+          Hello
+          <span v-bind:style="styleObject">arimura</span>
+        </p>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@3.1.5"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
